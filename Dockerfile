@@ -1,14 +1,13 @@
-FROM centos:7
+FROM buildpack-deps:bionic
 LABEL maintainer="joe@zollo.net"
-
-RUN yum install -y openssh-clients epel-release \
-    && yum update -y \
-    && yum install -y python36 python37 python3-pip python-pip
-
+COPY build.sh /
+RUN bash build.sh && rm /build.sh
+RUN apt-get update && \
+    apt-get install -y python-pip python-setuptools && \
+    rm -rf /var/cache/apt/lists
 RUN pip install --upgrade pip \
     && pip install tox \
+    && pip install ansible==2.9.9 \
     && pip install ansible-test \
     && pip install libyaml \
-    && pip install junit-xml
-
-ENTRYPOINT [ "/usr/bin/ansible-test" ]
+    && pip install junit-xml    
