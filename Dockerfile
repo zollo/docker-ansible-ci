@@ -9,5 +9,4 @@ RUN pip install --upgrade pip \
     && pip install tox \
     && pip install ansible==2.9.9 \
     && pip install ansible-test \
-    && pip install libyaml \
     && pip install junit-xml    
