@@ -1,0 +1,10 @@
+molecule
+junit-xml
+pylint
+pylint_junit
+yamllint
+yamllint-junit
+ansible-lint
+ansible-lint-junit
+yaml-lint-to-junit-xml
+ansible-lint-to-junit-xml
