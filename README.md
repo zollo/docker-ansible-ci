@@ -8,11 +8,7 @@ This Ansible container is designed specificially with CI in mind. It contains va
 
 All Ansible content is installed to the root user's folder (/root/.ansible) so that it will be accessible from anywhere in the container.
 
-## Content: OS Packages
-
-* N/A
-
-## Content: Python Modules
+## Content
 
 * molecule
 * junit-xml
